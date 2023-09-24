@@ -24,7 +24,7 @@ func InteractiveHostSelection(data map[string]map[string]map[string]interface{})
 		Message: "Select Environment:",
 		Options: allEnv,
 	}
-	if err := survey.AskOne(promptEnv, &selectedEnv, survey.WithIcons(func(icons *survey.IconSet) {
+	if err := survey.AskOne(promptEnv, &selectedEnv, survey.WithPageSize(35), survey.WithIcons(func(icons *survey.IconSet) {
 		icons.Question.Text = "--"
 		icons.Question.Format = "magenta+hb"
 		icons.SelectFocus.Format = "green+hb"
@@ -49,7 +49,7 @@ func InteractiveHostSelection(data map[string]map[string]map[string]interface{})
 		Message: "Select Host:",
 		Options: append(allHosts, "-->RETURN TO ENVIRONMENT SELECTION"),
 	}
-	if err := survey.AskOne(promptHost, &selectedHost, survey.WithIcons(func(icons *survey.IconSet) {
+	if err := survey.AskOne(promptHost, &selectedHost, survey.WithPageSize(35), survey.WithIcons(func(icons *survey.IconSet) {
 		icons.Question.Text = "--"
 		icons.Question.Format = "magenta+hb"
 		icons.SelectFocus.Format = "blue+hb"
