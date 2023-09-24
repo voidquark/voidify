@@ -1,0 +1,30 @@
+name: Release Voidify
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    name: GoReleaser build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 #https://goreleaser.com/ci/actions/
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.21.1
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v5
+        with:
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_VOIDIFY_TOKEN }}
