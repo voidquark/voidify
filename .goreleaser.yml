@@ -1,0 +1,34 @@
+project_name: voidify
+builds:
+  - binary: voidify
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+changelog:
+  sort: asc
+  abbrev: 0
+  filters:
+    exclude: [ "^*.md", "^*.ya?ml" ]
+  groups:
+    - title: Features
+      regexp: ^.*?(F|f)eature.*?$
+      order: 0
+    - title: Bug fixes
+      regexp: ^.*?((B|b)ug)|((F|f)ix).*?$
+      order: 1
+    - title: Improvements
+      regexp: ^.*?(I|i)mprove.*?$
+      order: 2
+    - title: Updates
+      regexp: ^.*?(U|u)pdate.*?$
+      order: 3
+    - title: Security issues
+      regexp: ^.*?(S|s)ecurity.*?$
+      order: 4
+    - title: Delete unused or stale
+      regexp: ^.*?((D|d)elete)|((U|u)nused)|((S|s)tale).*?$
+      order: 5
+    - title: Others
+      order: 999
