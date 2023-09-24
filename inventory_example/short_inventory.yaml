@@ -1,0 +1,28 @@
+---
+production:
+  hosts:
+    mariadb:
+      HostName: "database1.voidquark.com"
+      Port: 222
+      user: "user"
+      IdentityFile: "~/.ssh/database1_key"
+      PreferredAuthentications: "publickey"
+      IdentitiesOnly: "Yes"
+    proxy:
+      HostName: "proxy.voidquark.com"
+      user: "bob"
+      IdentityFile: "~/.ssh/proxy_key"
+      PreferredAuthentications: "publickey"
+      IdentitiesOnly: "Yes"
+development:
+  hosts:
+    web:
+      HostName: "nginx.voidquark.com"
+      user: "alice"
+      PreferredAuthentications: "password"
+    grafana:
+      HostName: "grafana.voidquark.com"
+      user: "john"
+      IdentityFile: "~/.ssh/grafana_key"
+      PreferredAuthentications: "publickey"
+      IdentitiesOnly: "Yes"
