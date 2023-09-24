@@ -50,7 +50,7 @@ Flags:
 The inventory configuration for Voidify is inspired by Ansible YAML inventory structure but simplified for ease of use. It consists of two main sections: `Environment` and `hosts`.
 
 - `Environment`: Represents different environments, such as `production` and `development`, where your hosts are grouped.
-- `hosts`: Defines individual hosts with user-friendly names, like `mariadb`, which make it easy to identify where you want to connect.
+- `hosts`: Defines individual hosts with user-friendly names (alias), like `mariadb`, which make it easy to identify where you want to connect.
 
 Inside each `host`, you need to specify `key: value` pairs, where `key` corresponds to a supported SSH config parameter. Ensure that the `key` is written exactly as it appears in a typical SSH config file. The `value` field holds the value for that key.
 
@@ -119,7 +119,7 @@ Host grafana
 	IdentitiesOnly Yes
 ```
 
-## Instalation
+## Installation
 
 Voidify is designed for installation on your workstation, to be executed via your terminal application.
 
@@ -152,6 +152,7 @@ git clone https://github.com/voidquark/voidify
 
 **Step 2: Download modules to local cache**
 ```shell
+cd voidify
 go mod download
 ```
 
