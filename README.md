@@ -6,7 +6,7 @@
 
 **Simplify and Fastify your SSH Management**
 
-Voidify simplifies and accelerates SSH management, eliminating the need for numerous SSH aliases or dealing with bash auto-completions. With Voidify, you don't have to worry about remembering all the server details. Instead, just run Voidify, use your arrow keys in the terminal to navigate through environment selections, and choose the server name you want to connect to. You can even start typing to filter hosts while making your selection. It takes inspiration from Ansible's YAML-based inventory to simplify configuration, which is automatically translated into SSH config.
+Voidify simplifies and accelerates SSH management, eliminating the need to deal with bash auto-completions. With Voidify, you don't have to worry about remembering all the server details. Instead, just run Voidify, use your arrow keys in the terminal to navigate through environment selections, and choose the server name you want to connect to. You can even start typing to filter hosts while making your selection. It takes inspiration from Ansible's YAML-based inventory to simplify configuration, which is automatically translated into SSH config.
 
 **Key Features:**
 - 📝 **YAML Power:** Utilize YAML configuration as the source of truth for your SSH connections.
@@ -50,7 +50,7 @@ Flags:
 The inventory configuration for Voidify is inspired by Ansible YAML inventory structure but simplified for ease of use. It consists of two main sections: `Environment` and `hosts`.
 
 - `Environment`: Represents different environments, such as `production` and `development`, where your hosts are grouped.
-- `hosts`: Defines individual hosts with user-friendly names (alias), like `mariadb`, which make it easy to identify where you want to connect.
+- `hosts`: Defines individual hosts with user-friendly names, like `mariadb`, which make it easy to identify where you want to connect.
 
 Inside each `host`, you need to specify `key: value` pairs, where `key` corresponds to a supported SSH config parameter. Ensure that the `key` is written exactly as it appears in a typical SSH config file. The `value` field holds the value for that key.
 
@@ -88,6 +88,9 @@ development:
       PreferredAuthentications: "publickey"
       IdentitiesOnly: "Yes"
 ```
+
+> [!IMPORTANT]
+> Host must be a unique name. For example, you cannot have `mariadb` in `development` and `production` because then you will have the same entries in SSH config."
 
 This configuration is then translated into an SSH config like this:
 ```
