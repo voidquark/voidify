@@ -90,7 +90,7 @@ development:
 ```
 
 > [!IMPORTANT]
-> Host must be a unique name. For example, you cannot have `mariadb` in `development` and `production` because then you will have the same entries in SSH config."
+> Host must be a unique name. For example, you cannot have `mariadb` in `development` and `production` because then you will have the same entries in SSH config.
 
 This configuration is then translated into an SSH config like this:
 ```
