@@ -26,10 +26,12 @@ var rootCmd = &cobra.Command{
 ┃┃┏┓┓┏┫┓╋┓┏
 ┗┛┗┛┗┗┻┗┛┗┫
 	  ┛
-Voidify is your key to simplified and accelerated SSH management.
-With a YAML-based host inventory inspired by Ansible inventory,
-Voidify transforms it into an SSH config, making connection to your servers ultra simple.
-Simply use the CLI to navigate through environment selection and host selection, and connect to your target host.`,
+
+Voidify simplifies and accelerates SSH management, eliminating the need to deal with bash auto-completions.
+With Voidify, you don't have to worry about remembering all the server details.
+Instead, just run Voidify, use your arrow keys in the terminal to navigate through environment selections, and choose the server name you want to connect to.
+You can even start typing to filter hosts while making your selection.
+It takes inspiration from Ansible's YAML-based inventory to simplify configuration, which is automatically translated into SSH config.`,
 	Run: func(cmd *cobra.Command, args []string) {
 	},
 }
