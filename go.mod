@@ -1,6 +1,6 @@
 module github.com/voidquark/voidify
 
-go 1.21.5
+go 1.22.2
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7
@@ -15,7 +15,7 @@ require (
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	golang.org/x/sys v0.15.0 // indirect
-	golang.org/x/term v0.15.0 // indirect
+	golang.org/x/sys v0.19.0 // indirect
+	golang.org/x/term v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 )
