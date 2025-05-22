@@ -11,7 +11,7 @@ import (
 	yaml_config "github.com/voidquark/voidify/yaml"
 )
 
-const CLIVersion string = "1.0.3"
+const CLIVersion string = "1.0.4"
 
 var configFile string
 var sshConfigFile string
