@@ -5,26 +5,30 @@ on:
     tags:
       - "*"
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: GoReleaser build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v3
+      - name: Check out code
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0 #https://goreleaser.com/ci/actions/
+          fetch-depth: 0
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
-          go-version: 1.21.1
+          go-version-file: go.mod
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v5
+        uses: goreleaser/goreleaser-action@v6
         with:
-          version: latest
+          distribution: goreleaser
+          version: "~> v2"
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_VOIDIFY_TOKEN }}
