@@ -1,11 +1,23 @@
+version: 2
+
 project_name: voidify
+
 builds:
   - binary: voidify
+    env:
+      - CGO_ENABLED=0
     goos:
       - linux
       - darwin
     goarch:
       - amd64
+      - arm64
+    ignore:
+      - goos: darwin
+        goarch: amd64
+      - goos: linux
+        goarch: arm64
+
 changelog:
   sort: asc
   abbrev: 0
